@@ -9,11 +9,19 @@
     "en": "Todoist"
   },
   "description": {
-    "en": "Adds support for Todoist users."
+    "en": "The to do list to organize work & life."
   },
   "category": [
-    "tools"
+    "tools",
+    "internet"
   ],
+  "tags": {
+    "en": [
+      "todo",
+      "todo list",
+      "tasks"
+    ]
+  },
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
@@ -23,6 +31,12 @@
     "name": "Jeroen Wienk",
     "email": "jeroenwienk@gmail.com"
   },
+  "bugs": {
+    "url": "https://github.com/jeroenwienk/nl.jwienk.todoist/issues"
+  },
+  "source": "https://github.com/jeroenwienk/nl.jwienk.todoist",
+  "homepage": "https://github.com/jeroenwienk/nl.jwienk.todoist",
+  "support": "mailto:jeroenwienk@gmail.com",
   "flow": {
     "triggers": [
       {
