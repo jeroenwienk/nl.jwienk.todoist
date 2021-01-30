@@ -1,3 +1,3 @@
 # Todoist
 
-Adds support for MyBrand devices.
+Todoist integration for Homey.
