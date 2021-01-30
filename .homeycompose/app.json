@@ -8,9 +8,9 @@
     "en": "Todoist"
   },
   "description": {
-    "en": "Adds support for Todoist users."
+    "en": "Todoist integration for Homey."
   },
-  "category": ["tools"],
+  "category": ["tools", "internet"],
   "permissions": [],
   "images": {
     "large": "/assets/images/large.png",
@@ -19,5 +19,11 @@
   "author": {
     "name": "Jeroen Wienk",
     "email": "jeroenwienk@gmail.com"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/jeroenwienk/nl.jwienk.todoist/issues"
+  },
+  "source": "https://github.com/jeroenwienk/nl.jwienk.todoist",
+  "homepage": "https://github.com/jeroenwienk/nl.jwienk.todoist",
+  "support": "mailto:jeroenwienk@gmail.com"
 }
