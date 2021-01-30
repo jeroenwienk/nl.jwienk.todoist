@@ -19,8 +19,8 @@ class App extends OAuth2App {
     this.enableOAuth2Debug();
     this.setOAuth2Config({
       client: TodoistClient,
-      clientId: '96cbbdd8c67c4c65ac33679ce1cda843',
-      clientSecret: 'df993c90b5a94cb29a20e4fc3fa17bff',
+      clientId: '',
+      clientSecret: '',
       grantType: 'authorization_code',
       apiUrl: 'https://api.todoist.com',
       tokenUrl: 'https://todoist.com/oauth/access_token',
