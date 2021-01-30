@@ -1,0 +1,176 @@
+{
+  "triggers": [
+    {
+      "id": "trigger_event_task",
+      "title": {
+        "en": "A task was..."
+      },
+      "titleFormatted": {
+        "en": "A task was [[event_name]]"
+      },
+      "hint": {
+        "en": "Events might have slight delays (0-30sec)."
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "event_name",
+          "title": {
+            "en": "Event"
+          },
+          "values": [
+            {
+              "id": "item:completed",
+              "label": {
+                "en": "Completed"
+              }
+            },
+            {
+              "id": "item:uncompleted",
+              "label": {
+                "en": "Uncompleted"
+              }
+            }
+          ]
+        }
+      ],
+      "tokens": [
+        {
+          "name": "content",
+          "type": "string",
+          "title": {
+            "en": "Content"
+          },
+          "example": {
+            "en": "Do the laundry"
+          }
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "action_project_task",
+      "title": {
+        "en": "Create a project task..."
+      },
+      "titleFormatted": {
+        "en": "Create a task [[content]] in [[project]]"
+      },
+      "hint": {
+        "en": "Creates a task in the selected project."
+      },
+      "args": [
+        {
+          "type": "text",
+          "name": "content",
+          "placeholder": {
+            "en": "Do the laundry"
+          }
+        },
+        {
+          "type": "autocomplete",
+          "name": "project",
+          "placeholder": {
+            "en": "Search for projects..."
+          },
+          "title": {
+            "en": "Project"
+          }
+        }
+      ]
+    },
+    {
+      "id": "action_project_due_date_task",
+      "title": {
+        "en": "Create a project task with a due date..."
+      },
+      "titleFormatted": {
+        "en": "Create a task [[content]] in [[project]] and due date [[due_date]]"
+      },
+      "hint": {
+        "en": "Creates a task in the selected project with a due date."
+      },
+      "args": [
+        {
+          "type": "text",
+          "name": "content",
+          "placeholder": {
+            "en": "Do the laundry"
+          }
+        },
+        {
+          "type": "autocomplete",
+          "name": "project",
+          "title": {
+            "en": "Project"
+          },
+          "placeholder": {
+            "en": "Search for projects..."
+          }
+        },
+        {
+          "type": "date",
+          "name": "due_date",
+          "title": {
+            "en": "Due date"
+          },
+          "placeholder": {
+            "en": "Due date..."
+          }
+        }
+      ]
+    },
+    {
+      "id": "action_project_due_date_due_time_task",
+      "title": {
+        "en": "Create a project task with a due date and a due time..."
+      },
+      "titleFormatted": {
+        "en": "Create a task [[content]] in [[project]] and due date [[due_date]] and due time [[due_time]]"
+      },
+      "hint": {
+        "en": "Creates a task in the selected project with a due date and a due time."
+      },
+      "args": [
+        {
+          "type": "text",
+          "name": "content",
+          "placeholder": {
+            "en": "Do the laundry"
+          }
+        },
+        {
+          "type": "autocomplete",
+          "name": "project",
+          "title": {
+            "en": "Project"
+          },
+          "placeholder": {
+            "en": "Search for projects..."
+          }
+        },
+        {
+          "type": "date",
+          "name": "due_date",
+          "title": {
+            "en": "Due date"
+          },
+          "placeholder": {
+            "en": "Due date..."
+          }
+        },
+        {
+          "type": "time",
+          "name": "due_time",
+          "title": {
+            "en": "Due time"
+          },
+          "placeholder": {
+            "en": "Due time..."
+          }
+        }
+      ]
+    }
+  ]
+}

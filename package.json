@@ -1,0 +1,22 @@
+{
+  "name": "nl.jwienk.todoist",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --watch . --exec \"homey app run\""
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "app.json"
+    ]
+  },
+  "devDependencies": {
+    "homey": "^2.9.7",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "promise-queue": "^2.2.5"
+  }
+}

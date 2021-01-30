@@ -1,0 +1,23 @@
+{
+  "id": "nl.jwienk.todoist",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#db4035",
+  "name": {
+    "en": "Todoist"
+  },
+  "description": {
+    "en": "Adds support for Todoist users."
+  },
+  "category": ["tools"],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Jeroen Wienk",
+    "email": "jeroenwienk@gmail.com"
+  }
+}
