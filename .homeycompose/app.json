@@ -8,7 +8,7 @@
     "en": "Todoist"
   },
   "description": {
-    "en": "Todoist integration for Homey."
+    "en": "The to do list to organize work & life."
   },
   "category": ["tools", "internet"],
   "permissions": [],
