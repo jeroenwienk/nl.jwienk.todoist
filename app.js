@@ -19,8 +19,8 @@ class App extends OAuth2App {
     this.enableOAuth2Debug();
     this.setOAuth2Config({
       client: TodoistClient,
-      clientId: '',
-      clientSecret: '',
+      clientId: Homey.env.CLIENT_ID,
+      clientSecret: Homey.env.CLIENT_SECRET,
       grantType: 'authorization_code',
       apiUrl: 'https://api.todoist.com',
       tokenUrl: 'https://todoist.com/oauth/access_token',
