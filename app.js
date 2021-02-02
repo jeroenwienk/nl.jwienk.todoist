@@ -4,9 +4,9 @@ const Homey = require('homey');
 const { OAuth2App } = require('./lib/replace_after_fix');
 const { TodoistClient } = require('./lib/TodoistClient');
 
-if (process.env.DEBUG === '1') {
-  require('inspector').open(9229, '0.0.0.0', true);
-}
+// if (process.env.DEBUG === '1') {
+//   require('inspector').open(9229, '0.0.0.0', true);
+// }
 
 class App extends OAuth2App {
   /**
