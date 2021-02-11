@@ -1,6 +1,6 @@
 'use strict';
 
-const { OAuth2Device } = require('../../lib/replace_after_fix');
+const { OAuth2Device } = require('homey-oauth2app');
 
 class UserDevice extends OAuth2Device {
   /**

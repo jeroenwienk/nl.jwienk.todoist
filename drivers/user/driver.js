@@ -1,6 +1,6 @@
 'use strict';
 
-const { OAuth2Driver } = require('../../lib/replace_after_fix');
+const { OAuth2Driver } = require('homey-oauth2app');
 
 class UserDriver extends OAuth2Driver {
   /**

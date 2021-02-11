@@ -1,12 +1,12 @@
 'use strict';
 
 const Homey = require('homey');
-const { OAuth2App } = require('./lib/replace_after_fix');
+const { OAuth2App } = require('homey-oauth2app');
 const { TodoistClient } = require('./lib/TodoistClient');
 
-// if (process.env.DEBUG === '1') {
-//   require('inspector').open(9229, '0.0.0.0', true);
-// }
+if (process.env.DEBUG === '1') {
+  require('inspector').open(9229, '0.0.0.0', false);
+}
 
 class App extends OAuth2App {
   /**
@@ -27,7 +27,7 @@ class App extends OAuth2App {
       authorizationUrl: 'https://todoist.com/oauth/authorize',
       redirectUrl: 'https://callback.athom.com/oauth2/callback',
       scopes: ['data:read_write'],
-      allowMultiSession: true,
+      allowMultiSession: true
     });
 
     this.ids = new Set();
@@ -49,15 +49,7 @@ class App extends OAuth2App {
 
     myWebhook.on('message', (args) => {
       const driver = this.homey.drivers.getDriver('user');
-
       driver.onWebhookEvent({ body: args.body });
-
-      // this.log(driver);
-      //
-      // this.log('Got a webhook message!');
-      // this.log('headers:', args.headers);
-      // this.log('query:', args.query);
-      // this.log('body:', args.body);
     });
   }
 }
