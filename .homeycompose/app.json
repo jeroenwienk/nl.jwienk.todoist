@@ -5,21 +5,17 @@
   "sdk": 3,
   "brandColor": "#db4035",
   "name": {
-    "en": "Todoist"
+    "en": "Todoist",
+    "nl": "Todoist"
   },
   "description": {
-    "en": "The to do list to organize work & life."
+    "en": "The to do list to organize work & life.",
+    "nl": "The to do list to organize work & life."
   },
-  "category": [
-    "tools",
-    "internet"
-  ],
+  "category": ["tools", "internet"],
   "tags": {
-    "en": [
-      "todo",
-      "todo list",
-      "tasks"
-    ]
+    "en": ["todo", "todo list", "tasks", "task list", "organize"],
+    "nl": ["todo", "todo lijst", "taken", "taken lijst", "organiseren"]
   },
   "permissions": [],
   "images": {

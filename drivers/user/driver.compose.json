@@ -1,7 +1,8 @@
 {
   "id": "user",
   "name": {
-    "en": "Todoist User"
+    "en": "Todoist User",
+    "nl": "Todoist Gebruiker"
   },
   "class": "other",
   "capabilities": [],

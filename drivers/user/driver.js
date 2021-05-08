@@ -15,6 +15,7 @@ class UserDriver extends OAuth2Driver {
     this.registerEventTaskDeviceTrigger();
 
     this.registerProjectTaskAction();
+    this.registerProjectDueStringTaskAction();
     this.registerProjectDueDateTaskAction();
     this.registerProjectDueDateDueTimeTaskAction();
   }
@@ -79,14 +80,33 @@ class UserDriver extends OAuth2Driver {
     );
   }
 
+  registerProjectDueStringTaskAction() {
+    const actionProjectDueStringTask = this.homey.flow.getActionCard(
+      'action_project_due_string_task'
+    );
+
+    actionProjectDueStringTask.registerRunListener(async (args, state) => {
+      await args.device.oAuth2Client.createTask({
+        content: args.content,
+        project_id: args.project.id,
+        due_string: args.due_string,
+      });
+
+      return true;
+    });
+
+    actionProjectDueStringTask.registerArgumentAutocompleteListener(
+      'project',
+      this.projectAutocompleteListener
+    );
+  }
+
   registerProjectDueDateTaskAction() {
     const actionProjectDueDateTask = this.homey.flow.getActionCard(
       'action_project_due_date_task'
     );
 
     actionProjectDueDateTask.registerRunListener(async (args, state) => {
-      this.log(args);
-
       const due_date = args.due_date.split('-').reverse().join('-');
 
       await args.device.oAuth2Client.createTask({

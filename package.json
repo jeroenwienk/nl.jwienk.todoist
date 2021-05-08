@@ -10,12 +10,12 @@
       "app.json"
     ]
   },
-  "devDependencies": {
-    "homey": "^2.9.7",
-    "nodemon": "^2.0.7",
-    "prettier": "^2.2.1"
-  },
   "dependencies": {
     "homey-oauth2app": "^3.0.7"
+  },
+  "devDependencies": {
+    "@types/homey": "npm:homey-apps-sdk-v3-types@^0.1.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1"
   }
 }

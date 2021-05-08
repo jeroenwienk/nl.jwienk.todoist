@@ -3,32 +3,38 @@
     {
       "id": "trigger_event_task",
       "title": {
-        "en": "A task was..."
+        "en": "A task was...",
+        "nl": "Een taak is..."
       },
       "titleFormatted": {
-        "en": "A task was [[event_name]]"
+        "en": "A task was [[event_name]]",
+        "nl": "Een taak is [[event_name]]"
       },
       "hint": {
-        "en": "Events might have slight delays (0-30sec)."
+        "en": "Events might have slight delays (0-30sec).",
+        "nl": "Gebeurtenissen kunnen een kleine vertraging hebben (0-30sec)."
       },
       "args": [
         {
           "type": "dropdown",
           "name": "event_name",
           "title": {
-            "en": "Event"
+            "en": "Event",
+            "nl": "Gebeurtenis"
           },
           "values": [
             {
               "id": "item:completed",
               "label": {
-                "en": "Completed"
+                "en": "Completed",
+                "nl": "Voltooid"
               }
             },
             {
               "id": "item:uncompleted",
               "label": {
-                "en": "Uncompleted"
+                "en": "Uncompleted",
+                "nl": "Niet Voltooid"
               }
             }
           ]
@@ -39,10 +45,12 @@
           "name": "content",
           "type": "string",
           "title": {
-            "en": "Content"
+            "en": "Content",
+            "nl": "Inhoud"
           },
           "example": {
-            "en": "Do the laundry"
+            "en": "Do the laundry",
+            "nl": "Was doen"
           }
         }
       ]
@@ -52,30 +60,85 @@
     {
       "id": "action_project_task",
       "title": {
-        "en": "Create a project task..."
+        "en": "Create a project task...",
+        "nl": "Maak een project taak..."
       },
       "titleFormatted": {
-        "en": "Create a task [[content]] in [[project]]"
+        "en": "Create a task [[content]] in [[project]]",
+        "nl": "Maak een taak [[content]] in [[project]]"
       },
       "hint": {
-        "en": "Creates a task in the selected project."
+        "en": "Creates a task in the selected project.",
+        "nl": "Maakt een taak in het geselecteerde project."
       },
       "args": [
         {
           "type": "text",
           "name": "content",
           "placeholder": {
-            "en": "Do the laundry"
+            "en": "Do the laundry",
+            "nl": "Was doen"
           }
         },
         {
           "type": "autocomplete",
           "name": "project",
           "placeholder": {
-            "en": "Search for projects..."
+            "en": "Search for projects...",
+            "nl": "Zoek naar projecten..."
           },
           "title": {
-            "en": "Project"
+            "en": "Project",
+            "nl": "Project"
+          }
+        }
+      ]
+    },
+    {
+      "id": "action_project_due_string_task",
+      "title": {
+        "en": "Create a project task with a due text...",
+        "nl": "Maak een project taak met uiterste datum tekst..."
+      },
+      "titleFormatted": {
+        "en": "Create a task [[content]] in [[project]] and due [[due_string]]",
+        "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_string]]"
+      },
+      "hint": {
+        "en": "Creates a task in the selected project with a due text (e.g. in 1 hour). The due text is based on the Todoist language/timezone setting. For all posibilities refer to the Todoist help articles.",
+        "nl": "Maakt een taak in het geselecteerde project met een uiterste datum tekst (bijv. over 1 uur). De uiterste datum is gebaseerd op de Todoist taal/tijdzone instelling. Bekijk voor alle mogelijkheden de Todoist help artikelen."
+      },
+      "args": [
+        {
+          "type": "text",
+          "name": "content",
+          "placeholder": {
+            "en": "Do the laundry",
+            "nl": "Was doen"
+          }
+        },
+        {
+          "type": "autocomplete",
+          "name": "project",
+          "placeholder": {
+            "en": "Search for projects...",
+            "nl": "Zoek naar projecten..."
+          },
+          "title": {
+            "en": "Project",
+            "nl": "Project"
+          }
+        },
+        {
+          "type": "text",
+          "name": "due_string",
+          "placeholder": {
+            "en": "e.g. in 1 hour of 21-05-2021 20:20",
+            "nl": "bijv. over 1 uur of 21-05-2021 20:20"
+          },
+          "title": {
+            "en": "Due",
+            "nl": "Uiterste datum"
           }
         }
       ]
@@ -83,40 +146,48 @@
     {
       "id": "action_project_due_date_task",
       "title": {
-        "en": "Create a project task with a due date..."
+        "en": "Create a project task with a due date...",
+        "nl": "Maak een project taak met uiterste datum..."
       },
       "titleFormatted": {
-        "en": "Create a task [[content]] in [[project]] and due date [[due_date]]"
+        "en": "Create a task [[content]] in [[project]] and due date [[due_date]]",
+        "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]]"
       },
       "hint": {
-        "en": "Creates a task in the selected project with a due date."
+        "en": "Creates a task in the selected project with a due date.",
+        "nl": "Maakt een taak in het geselecteerde project met een uiterste datum."
       },
       "args": [
         {
           "type": "text",
           "name": "content",
           "placeholder": {
-            "en": "Do the laundry"
+            "en": "Do the laundry",
+            "nl": "Was doen"
           }
         },
         {
           "type": "autocomplete",
           "name": "project",
-          "title": {
-            "en": "Project"
-          },
           "placeholder": {
-            "en": "Search for projects..."
+            "en": "Search for projects...",
+            "nl": "Zoek naar projecten..."
+          },
+          "title": {
+            "en": "Project",
+            "nl": "Project"
           }
         },
         {
           "type": "date",
           "name": "due_date",
           "title": {
-            "en": "Due date"
+            "en": "Due date",
+            "nl": "Uiterste datum"
           },
           "placeholder": {
-            "en": "Due date..."
+            "en": "Due date...",
+            "nl": "Uiterste datum..."
           }
         }
       ]
@@ -124,50 +195,60 @@
     {
       "id": "action_project_due_date_due_time_task",
       "title": {
-        "en": "Create a project task with a due date and a due time..."
+        "en": "Create a project task with a due date and a due time...",
+        "nl": "Maak een project taak met uiterste datum en uiterste tijd..."
       },
       "titleFormatted": {
-        "en": "Create a task [[content]] in [[project]] and due date [[due_date]] and due time [[due_time]]"
+        "en": "Create a task [[content]] in [[project]] and due date [[due_date]] and due time [[due_time]]",
+        "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] en uiterste tijd [[due_time]]"
       },
       "hint": {
-        "en": "Creates a task in the selected project with a due date and a due time."
+        "en": "Creates a task in the selected project with a due date and a due time.",
+        "nl": "Maakt een taak in het geselecteerde project met een uiterste datum en uiterste tijd."
       },
       "args": [
         {
           "type": "text",
           "name": "content",
           "placeholder": {
-            "en": "Do the laundry"
+            "en": "Do the laundry",
+            "nl": "Was doen"
           }
         },
         {
           "type": "autocomplete",
           "name": "project",
-          "title": {
-            "en": "Project"
-          },
           "placeholder": {
-            "en": "Search for projects..."
+            "en": "Search for projects...",
+            "nl": "Zoek naar projecten..."
+          },
+          "title": {
+            "en": "Project",
+            "nl": "Project"
           }
         },
         {
           "type": "date",
           "name": "due_date",
           "title": {
-            "en": "Due date"
+            "en": "Due date",
+            "nl": "Uiterste datum"
           },
           "placeholder": {
-            "en": "Due date..."
+            "en": "Due date...",
+            "nl": "Uiterste datum..."
           }
         },
         {
           "type": "time",
           "name": "due_time",
           "title": {
-            "en": "Due time"
+            "en": "Due time",
+            "nl": "Uiterste tijd"
           },
           "placeholder": {
-            "en": "Due time..."
+            "en": "Due time...",
+            "nl": "Uiterste tijd..."
           }
         }
       ]
