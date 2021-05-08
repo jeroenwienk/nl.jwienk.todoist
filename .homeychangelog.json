@@ -10,5 +10,8 @@
   },
   "1.0.3": {
     "en": "Cache Flow card projects"
+  },
+  "1.1.0": {
+    "en": "Added Flow card that support text dates (e.g. in one hour, 21-05-2021)."
   }
 }

@@ -1,6 +1,6 @@
 {
   "id": "nl.jwienk.todoist",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#db4035",
@@ -12,10 +12,25 @@
     "en": "The to do list to organize work & life.",
     "nl": "The to do list to organize work & life."
   },
-  "category": ["tools", "internet"],
+  "category": [
+    "tools",
+    "internet"
+  ],
   "tags": {
-    "en": ["todo", "todo list", "tasks", "task list", "organize"],
-    "nl": ["todo", "todo lijst", "taken", "taken lijst", "organiseren"]
+    "en": [
+      "todo",
+      "todo list",
+      "tasks",
+      "task list",
+      "organize"
+    ],
+    "nl": [
+      "todo",
+      "todo lijst",
+      "taken",
+      "taken lijst",
+      "organiseren"
+    ]
   },
   "permissions": [],
   "images": {
