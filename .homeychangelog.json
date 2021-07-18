@@ -13,5 +13,8 @@
   },
   "1.1.0": {
     "en": "Added Flow card that support text dates (e.g. in one hour, 21-05-2021)."
+  },
+  "1.1.1": {
+    "en": "added community topic id"
   }
 }
