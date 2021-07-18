@@ -9,6 +9,11 @@ if (process.env.DEBUG === '1') {
 }
 
 class App extends OAuth2App {
+  // static OAUTH2_CLIENT = TodoistClient; // Default: OAuth2Client
+  // static OAUTH2_DEBUG = false; // Default: false
+  // static OAUTH2_MULTI_SESSION = true; // Default: false
+  // static OAUTH2_DRIVERS = [ 'user' ]; // Default: all drivers
+
   /**
    * @override
    * @return {Promise<void>}
