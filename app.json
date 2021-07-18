@@ -48,6 +48,7 @@
   "source": "https://github.com/jeroenwienk/nl.jwienk.todoist",
   "homepage": "https://todoist.com/",
   "support": "mailto:jeroenwienk@gmail.com",
+  "homeyCommunityTopicId": 42818,
   "flow": {
     "triggers": [
       {
