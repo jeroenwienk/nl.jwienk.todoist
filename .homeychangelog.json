@@ -16,5 +16,8 @@
   },
   "1.1.1": {
     "en": "added community topic id"
+  },
+  "1.2.0": {
+    "en": "added option to fetch tasks for a project"
   }
 }
