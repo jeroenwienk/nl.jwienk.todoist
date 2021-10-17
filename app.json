@@ -110,6 +110,52 @@
             }
           }
         ]
+      },
+      {
+        "id": "trigger_project_tasks_fetched",
+        "title": {
+          "en": "Tasks are fetched for project...",
+          "nl": "Taken zijn opgehaald voor project..."
+        },
+        "titleFormatted": {
+          "en": "Tasks for [[project]] are fetched",
+          "nl": "Taken voor [[project]] zijn opgehaald"
+        },
+        "hint": {
+          "en": "Use a Then card to fetch tasks for a project.",
+          "nl": "Gebruik een Dan kaart om taken op te halen voor een project."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=user"
+          },
+          {
+            "type": "autocomplete",
+            "name": "project",
+            "placeholder": {
+              "en": "Search for projects...",
+              "nl": "Zoek naar projecten..."
+            },
+            "title": {
+              "en": "Project",
+              "nl": "Project"
+            }
+          }
+        ],
+        "tokens": [
+          {
+            "name": "tasks",
+            "type": "string",
+            "title": {
+              "en": "Tasks"
+            },
+            "example": {
+              "en": "Do the laundry"
+            }
+          }
+        ]
       }
     ],
     "actions": [
@@ -325,6 +371,40 @@
             "placeholder": {
               "en": "Due time...",
               "nl": "Uiterste tijd..."
+            }
+          }
+        ]
+      },
+      {
+        "id": "action_fetch_project_tasks",
+        "title": {
+          "en": "Fetch project tasks...",
+          "nl": "Haal project taken op.."
+        },
+        "titleFormatted": {
+          "en": "Fetch tasks for [[project]]",
+          "nl": "Haal taken op voor [[project]]"
+        },
+        "hint": {
+          "en": "Fetch the tasks for a project. This card attempts to start When cards that are listening to a fetch event for the same project.",
+          "nl": "Haal taken op voor een project. Deze kaart probeert Wanneer kaarten te start die luisteren naar een ophaal gebeurtenis voor hetzelfde project."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=user"
+          },
+          {
+            "type": "autocomplete",
+            "name": "project",
+            "placeholder": {
+              "en": "Search for projects...",
+              "nl": "Zoek naar projecten..."
+            },
+            "title": {
+              "en": "Project",
+              "nl": "Project"
             }
           }
         ]

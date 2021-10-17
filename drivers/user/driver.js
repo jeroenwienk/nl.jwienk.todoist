@@ -8,16 +8,21 @@ class UserDriver extends OAuth2Driver {
    * @return {Promise<void>}
    */
   async onOAuth2Init() {
-    this.eventTaskDeviceTriggerCard = this.homey.flow.getDeviceTriggerCard(
-      'trigger_event_task'
-    );
+    this.eventTaskDeviceTriggerCard =
+      this.homey.flow.getDeviceTriggerCard('trigger_event_task');
+
+    this.projectTasksFetchedDeviceTriggerCard =
+      this.homey.flow.getDeviceTriggerCard('trigger_project_tasks_fetched');
 
     this.registerEventTaskDeviceTrigger();
+    this.registerProjectTasksFetchedDeviceTrigger();
 
     this.registerProjectTaskAction();
     this.registerProjectDueStringTaskAction();
     this.registerProjectDueDateTaskAction();
     this.registerProjectDueDateDueTimeTaskAction();
+
+    this.registerFetchProjectTasksAction();
   }
 
   /**
@@ -50,14 +55,29 @@ class UserDriver extends OAuth2Driver {
 
   registerEventTaskDeviceTrigger() {
     this.eventTaskDeviceTriggerCard.registerRunListener(async (args, state) => {
-      const { device, event_name } = args;
-
-      if (state.event_name === event_name) {
+      if (args.event_name === state.event_name) {
         return true;
       }
 
       return false;
     });
+  }
+
+  registerProjectTasksFetchedDeviceTrigger() {
+    this.projectTasksFetchedDeviceTriggerCard.registerRunListener(
+      async (args, state) => {
+        if (args.project.id === state.project_id) {
+          return true;
+        }
+
+        return false;
+      }
+    );
+
+    this.projectTasksFetchedDeviceTriggerCard.registerArgumentAutocompleteListener(
+      'project',
+      this.projectAutocompleteListener
+    );
   }
 
   registerProjectTaskAction() {
@@ -165,6 +185,56 @@ class UserDriver extends OAuth2Driver {
     });
 
     actionProjectDueDateDueTimeTask.registerArgumentAutocompleteListener(
+      'project',
+      this.projectAutocompleteListener
+    );
+  }
+
+  registerFetchProjectTasksAction() {
+    const actionFetchProjectTasks = this.homey.flow.getActionCard(
+      'action_fetch_project_tasks'
+    );
+
+    actionFetchProjectTasks.registerRunListener(async (args, state) => {
+      const tasks = await args.device.oAuth2Client.getTasks({
+        project_id: args.project.id,
+      });
+
+      const taskStrings = [];
+
+      taskStrings.push(`Project: ${args.project.name}`);
+
+      if (tasks.length === 0) {
+        taskStrings.push(this.homey.__("emptyTasks"));
+      }
+
+      for (const task of tasks) {
+        if (task.due != null) {
+          taskStrings.push(`${task.content}\n- ${task.due.string}`);
+          continue;
+        }
+
+        taskStrings.push(`${task.content}`);
+      }
+
+      const triggerTokens = {
+        tasks: taskStrings.join('\n\n'),
+      };
+
+      const triggerState = {
+        project_id: args.project.id,
+      };
+
+      await this.projectTasksFetchedDeviceTriggerCard.trigger(
+        args.device,
+        triggerTokens,
+        triggerState
+      );
+
+      return true;
+    });
+
+    actionFetchProjectTasks.registerArgumentAutocompleteListener(
       'project',
       this.projectAutocompleteListener
     );
