@@ -27,5 +27,9 @@
   "1.2.2": {
     "en": "• Added bullet points to fetched tasks token\n• update app description.",
     "nl": "• Opsommingsteken toegevoegd aan opgehaalde taken token\n• update app beschrijving."
+  },
+  "1.2.3": {
+    "en": "• Added bullet points to fetched tasks token\n• update app description.",
+    "nl": "• Opsommingsteken toegevoegd aan opgehaalde taken token\n• update app beschrijving."
   }
 }
