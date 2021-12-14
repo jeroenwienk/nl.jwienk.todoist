@@ -1,6 +1,6 @@
 {
   "name": "nl.jwienk.todoist",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "main": "app.js",
   "scripts": {
     "start": "nodemon --watch . --exec \"homey app run\""
