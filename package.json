@@ -7,7 +7,8 @@
   },
   "nodemonConfig": {
     "ignore": [
-      "app.json"
+      "app.json",
+      "build"
     ]
   },
   "dependencies": {
@@ -15,7 +16,7 @@
   },
   "devDependencies": {
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.2.2",
-    "nodemon": "^2.0.13",
-    "prettier": "^2.4.1"
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1"
   }
 }

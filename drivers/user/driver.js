@@ -202,23 +202,25 @@ class UserDriver extends OAuth2Driver {
 
       const taskStrings = [];
 
-      taskStrings.push(`Project: ${args.project.name}`);
+      taskStrings.push(`${this.homey.__('project')}: ${args.project.name}`);
+
+      const bull = String.fromCharCode(0x2022);
 
       if (tasks.length === 0) {
-        taskStrings.push(this.homey.__("emptyTasks"));
+        taskStrings.push(this.homey.__('emptyTasks'));
       }
 
       for (const task of tasks) {
         if (task.due != null) {
-          taskStrings.push(`${task.content}\n- ${task.due.string}`);
+          taskStrings.push(`${bull} ${task.content}\n- ${task.due.string}`);
           continue;
         }
 
-        taskStrings.push(`${task.content}`);
+        taskStrings.push(`${bull} ${task.content}`);
       }
 
       const triggerTokens = {
-        tasks: taskStrings.join('\n\n'),
+        tasks: taskStrings.join('\n'),
       };
 
       const triggerState = {
