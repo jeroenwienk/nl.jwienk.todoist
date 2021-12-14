@@ -19,5 +19,9 @@
   },
   "1.2.0": {
     "en": "added option to fetch tasks for a project"
+  },
+  "1.2.1": {
+    "en": "Added bullet points to fetched tasks token",
+    "nl": "Opsommingsteken toegevoegd aan opgehaalde taken token"
   }
 }
