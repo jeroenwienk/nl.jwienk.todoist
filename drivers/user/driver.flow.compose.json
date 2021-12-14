@@ -306,7 +306,7 @@
       },
       "hint": {
         "en": "Fetch the tasks for a project. This card attempts to start When cards that are listening to a fetch event for the same project.",
-        "nl": "Haal taken op voor een project. Deze kaart probeert Wanneer kaarten te start die luisteren naar een ophaal gebeurtenis voor hetzelfde project."
+        "nl": "Haal taken op voor een project. Deze kaart probeert Wanneer kaarten te starten die luisteren naar een ophaal gebeurtenis voor hetzelfde project."
       },
       "args": [
         {
