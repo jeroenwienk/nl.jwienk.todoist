@@ -12,25 +12,10 @@
     "en": "The to do list to organize work & life.",
     "nl": "The to do list to organize work & life."
   },
-  "category": [
-    "tools",
-    "internet"
-  ],
+  "category": ["internet", "tools"],
   "tags": {
-    "en": [
-      "todo",
-      "todo list",
-      "tasks",
-      "task list",
-      "organize"
-    ],
-    "nl": [
-      "todo",
-      "todo lijst",
-      "taken",
-      "taken lijst",
-      "organiseren"
-    ]
+    "en": ["todo", "todo list", "tasks", "task list", "organize"],
+    "nl": ["todo", "todo lijst", "taken", "taken lijst", "organiseren"]
   },
   "permissions": [],
   "images": {
@@ -47,5 +32,39 @@
   "source": "https://github.com/jeroenwienk/nl.jwienk.todoist",
   "homepage": "https://todoist.com/",
   "support": "mailto:jeroenwienk@gmail.com",
-  "homeyCommunityTopicId": 42818
+  "homeyCommunityTopicId": 42818,
+  "api": {
+    "getUsers": {
+      "method": "GET",
+      "path": "/users"
+    },
+    "getUser": {
+      "method": "GET",
+      "path": "/users/:userId"
+    },
+    "getUserProjects": {
+      "method": "GET",
+      "path": "/users/:userId/projects"
+    },
+    "getUserProject": {
+      "method": "GET",
+      "path": "/users/:userId/projects/:projectId"
+    },
+    "getUserProjectTasks": {
+      "method": "GET",
+      "path": "/users/:userId/projects/:projectId/tasks"
+    },
+    "addSomething": {
+      "method": "POST",
+      "path": "/"
+    },
+    "updateSomething": {
+      "method": "PUT",
+      "path": "/:id"
+    },
+    "deleteSomething": {
+      "method": "DELETE",
+      "path": "/:id"
+    }
+  }
 }

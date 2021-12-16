@@ -14,8 +14,8 @@
     "nl": "The to do list to organize work & life."
   },
   "category": [
-    "tools",
-    "internet"
+    "internet",
+    "tools"
   ],
   "tags": {
     "en": [
@@ -49,6 +49,40 @@
   "homepage": "https://todoist.com/",
   "support": "mailto:jeroenwienk@gmail.com",
   "homeyCommunityTopicId": 42818,
+  "api": {
+    "getUsers": {
+      "method": "GET",
+      "path": "/users"
+    },
+    "getUser": {
+      "method": "GET",
+      "path": "/users/:userId"
+    },
+    "getUserProjects": {
+      "method": "GET",
+      "path": "/users/:userId/projects"
+    },
+    "getUserProject": {
+      "method": "GET",
+      "path": "/users/:userId/projects/:projectId"
+    },
+    "getUserProjectTasks": {
+      "method": "GET",
+      "path": "/users/:userId/projects/:projectId/tasks"
+    },
+    "addSomething": {
+      "method": "POST",
+      "path": "/"
+    },
+    "updateSomething": {
+      "method": "PUT",
+      "path": "/:id"
+    },
+    "deleteSomething": {
+      "method": "DELETE",
+      "path": "/:id"
+    }
+  },
   "flow": {
     "triggers": [
       {
