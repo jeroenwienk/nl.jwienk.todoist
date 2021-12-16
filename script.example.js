@@ -58,3 +58,10 @@ await app.apiPost(`/users/${userId}/tasks/${createdTask.id}/reopen`);
 
 // delete task
 await app.apiDelete(`/users/${userId}/tasks/${createdTask3.id}`);
+
+await tag('Task ID', createdTask.id);
+global.set("taskId", createdTask.id);
+
+// from other script
+const taskId = global.get('taskId');
+await app.apiPost(`/users/${userId}/tasks/${taskId}/close`);
