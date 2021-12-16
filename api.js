@@ -46,13 +46,9 @@ module.exports = {
     const device = getUserDevice({ homey, userId: params.userId });
 
     if (device != null) {
-      const projects = await device.oAuth2Client.getProjects();
-
-      const project = projects.find((project) => {
-        return project.id.toString() === params.projectId.toString();
+      return await device.oAuth2Client.getProject({
+        project_id: params.projectId,
       });
-
-      if (project != null) return project;
     }
 
     return null;
@@ -61,35 +57,87 @@ module.exports = {
     const device = getUserDevice({ homey, userId: params.userId });
 
     if (device != null) {
-      const projects = await device.oAuth2Client.getProjects();
-
-      const project = projects.find((project) => {
-        return project.id.toString() === params.projectId.toString();
+      return await device.oAuth2Client.getTasks({
+        project_id: params.projectId,
       });
-
-      if (project != null) {
-        return await device.oAuth2Client.getTasks({
-          project_id: project.id,
-        });
-      }
     }
 
     return [];
   },
+  async getUserProjectTask({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
 
-  // async addSomething({ homey, body }) {
-  //   // access the post body and perform some action on it.
-  //
-  //   const driver = homey.drivers.getDriver('user');
-  //
-  //   return driver;
-  // },
-  //
-  // async updateSomething({ homey, params, body }) {
-  //   return homey.app.updateSomething(params.id, body);
-  // },
-  //
-  // async deleteSomething({ homey, params }) {
-  //   return homey.app.deleteSomething(params.id);
-  // },
+    if (device != null) {
+      return await device.oAuth2Client.getTask({
+        task_id: params.taskId,
+      });
+    }
+
+    return null;
+  },
+  async getUserTasks({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
+
+    if (device != null) {
+      return await device.oAuth2Client.getTasks();
+    }
+
+    return null;
+  },
+  async getUserTask({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
+
+    if (device != null) {
+      return await device.oAuth2Client.getTask({
+        task_id: params.taskId,
+      });
+    }
+
+    return null;
+  },
+  async createUserTask({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
+
+    if (device != null) {
+      return await device.oAuth2Client.createTask(body);
+    }
+
+    return null;
+  },
+  async updateUserTask({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
+
+    if (device != null) {
+      return await device.oAuth2Client.updateTask(params.taskId, body);
+    }
+
+    return null;
+  },
+  async closeUserTask({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
+
+    if (device != null) {
+      return await device.oAuth2Client.closeTask(params.taskId);
+    }
+
+    return null;
+  },
+  async reopenUserTask({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
+
+    if (device != null) {
+      return await device.oAuth2Client.reopenTask(params.taskId);
+    }
+
+    return null;
+  },
+  async deleteUserTask({ homey, params, query, body }) {
+    const device = getUserDevice({ homey, userId: params.userId });
+
+    if (device != null) {
+      return await device.oAuth2Client.deleteTask(params.taskId);
+    }
+
+    return null;
+  },
 };

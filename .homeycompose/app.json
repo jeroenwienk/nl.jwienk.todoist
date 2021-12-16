@@ -54,17 +54,37 @@
       "method": "GET",
       "path": "/users/:userId/projects/:projectId/tasks"
     },
-    "addSomething": {
+    "getUserProjectTask": {
+      "method": "GET",
+      "path": "/users/:userId/projects/:projectId/tasks/:taskId"
+    },
+    "getUserTasks": {
+      "method": "GET",
+      "path": "/users/:userId/tasks"
+    },
+    "getUserTask": {
+      "method": "GET",
+      "path": "/users/:userId/tasks/:taskId"
+    },
+    "createUserTask": {
       "method": "POST",
-      "path": "/"
+      "path": "/users/:userId/tasks"
     },
-    "updateSomething": {
-      "method": "PUT",
-      "path": "/:id"
+    "updateUserTask": {
+      "method": "POST",
+      "path": "/users/:userId/tasks/:taskId"
     },
-    "deleteSomething": {
+    "closeUserTask": {
+      "method": "POST",
+      "path": "/users/:userId/tasks/:taskId/close"
+    },
+    "reopenUserTask": {
+      "method": "POST",
+      "path": "/users/:userId/tasks/:taskId/reopen"
+    },
+    "deleteUserTask": {
       "method": "DELETE",
-      "path": "/:id"
+      "path": "/users/:userId/tasks/:taskId"
     }
   }
 }
