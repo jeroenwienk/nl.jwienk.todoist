@@ -1,4 +1,5 @@
 {
   "emptyTasks": "Geen taken.",
-  "project": "Project"
+  "project": "Project",
+  "invalidFilter": "Filter is niet geldig."
 }

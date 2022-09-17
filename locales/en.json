@@ -1,4 +1,5 @@
 {
   "emptyTasks": "No tasks.",
-  "project": "Project"
+  "project": "Project",
+  "invalidFilter": "Filter is not valid."
 }

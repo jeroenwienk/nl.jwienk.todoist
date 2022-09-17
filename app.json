@@ -212,6 +212,42 @@
         ]
       }
     ],
+    "conditions": [
+      {
+        "id": "condition_task_exists",
+        "title": {
+          "en": "Task with filter exists...",
+          "nl": "Taak met filter bestaat..."
+        },
+        "titleFormatted": {
+          "en": "Task with [[filter]] !{{exists|does not exist}} ",
+          "nl": "Taak with [[filter]] !{{bestaat|bestaat niet}}"
+        },
+        "hint": {
+          "en": "Checks if any task with the filter exists. There might be multiple tasks that match.",
+          "nl": "Kijkt of er een taak met filter bestaat. Er zijn mogelijk meerdere taken die aan het filter voldoen."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=user"
+          },
+          {
+            "type": "text",
+            "name": "filter",
+            "title": {
+              "en": "Filter",
+              "nl": "Filter"
+            },
+            "placeholder": {
+              "en": "Do the laundry",
+              "nl": "Doe de was"
+            }
+          }
+        ]
+      }
+    ],
     "actions": [
       {
         "id": "action_project_task",
@@ -459,6 +495,40 @@
             "title": {
               "en": "Project",
               "nl": "Project"
+            }
+          }
+        ]
+      },
+      {
+        "id": "action_complete_tasks",
+        "title": {
+          "en": "Complete tasks with filter...",
+          "nl": "Voltooi taken met filter..."
+        },
+        "titleFormatted": {
+          "en": "Complete tasks with [[filter]]",
+          "nl": "Voltooi taken met [[filter]]"
+        },
+        "hint": {
+          "en": "A filter that is not very specific has the potential the complete alot of tasks. Make sure you have a very specific filter.",
+          "nl": "Een filter die niet zeer specifiek is heeft de potentie om heel veel taken the voltooien. Zorg ervoor dat het filter zeer specifiek is."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=user"
+          },
+          {
+            "type": "text",
+            "name": "filter",
+            "title": {
+              "en": "Filter",
+              "nl": "Filter"
+            },
+            "placeholder": {
+              "en": "Do the laundry",
+              "nl": "Was doen"
             }
           }
         ]

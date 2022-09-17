@@ -8,14 +8,16 @@ class UserDriver extends OAuth2Driver {
    * @return {Promise<void>}
    */
   async onOAuth2Init() {
-    this.eventTaskDeviceTriggerCard =
-      this.homey.flow.getDeviceTriggerCard('trigger_event_task');
+    this.eventTaskDeviceTriggerCard = this.homey.flow.getDeviceTriggerCard('trigger_event_task');
 
-    this.projectTasksFetchedDeviceTriggerCard =
-      this.homey.flow.getDeviceTriggerCard('trigger_project_tasks_fetched');
+    this.projectTasksFetchedDeviceTriggerCard = this.homey.flow.getDeviceTriggerCard(
+      'trigger_project_tasks_fetched'
+    );
 
     this.registerEventTaskDeviceTrigger();
     this.registerProjectTasksFetchedDeviceTrigger();
+
+    this.registerTaskExistsCondition();
 
     this.registerProjectTaskAction();
     this.registerProjectDueStringTaskAction();
@@ -23,6 +25,27 @@ class UserDriver extends OAuth2Driver {
     this.registerProjectDueDateDueTimeTaskAction();
 
     this.registerFetchProjectTasksAction();
+    this.registerCompleteTasksAction();
+  }
+
+  registerCompleteTasksAction() {
+    const actionCompleteTasks = this.homey.flow.getActionCard('action_complete_tasks');
+
+    actionCompleteTasks.registerRunListener(async (args, state) => {
+      if (args.filter.trim() === '') {
+        throw new Error(this.homey.__('invalidFilter'));
+      }
+
+      const tasks = await args.device.oAuth2Client.getTasks({
+        filter: `search: ${args.filter}`,
+      });
+
+      this.log(tasks);
+
+      await Promise.all(tasks.map(async task => {
+        await args.device.oAuth2Client.closeTask(task.id);
+      }));
+    });
   }
 
   /**
@@ -64,15 +87,13 @@ class UserDriver extends OAuth2Driver {
   }
 
   registerProjectTasksFetchedDeviceTrigger() {
-    this.projectTasksFetchedDeviceTriggerCard.registerRunListener(
-      async (args, state) => {
-        if (args.project.id === state.project_id) {
-          return true;
-        }
-
-        return false;
+    this.projectTasksFetchedDeviceTriggerCard.registerRunListener(async (args, state) => {
+      if (args.project.id === state.project_id) {
+        return true;
       }
-    );
+
+      return false;
+    });
 
     this.projectTasksFetchedDeviceTriggerCard.registerArgumentAutocompleteListener(
       'project',
@@ -80,10 +101,24 @@ class UserDriver extends OAuth2Driver {
     );
   }
 
+  registerTaskExistsCondition() {
+    const conditionTaskExists = this.homey.flow.getConditionCard('condition_task_exists');
+
+    conditionTaskExists.registerRunListener(async (args, state) => {
+      const tasks = await args.device.oAuth2Client.getTasks({
+        filter: `search: ${args.filter}`,
+      });
+
+      if (tasks.length > 0) {
+        return true;
+      }
+
+      return false;
+    });
+  }
+
   registerProjectTaskAction() {
-    const actionProjectTask = this.homey.flow.getActionCard(
-      'action_project_task'
-    );
+    const actionProjectTask = this.homey.flow.getActionCard('action_project_task');
 
     actionProjectTask.registerRunListener(async (args, state) => {
       await args.device.oAuth2Client.createTask({
@@ -122,9 +157,7 @@ class UserDriver extends OAuth2Driver {
   }
 
   registerProjectDueDateTaskAction() {
-    const actionProjectDueDateTask = this.homey.flow.getActionCard(
-      'action_project_due_date_task'
-    );
+    const actionProjectDueDateTask = this.homey.flow.getActionCard('action_project_due_date_task');
 
     actionProjectDueDateTask.registerRunListener(async (args, state) => {
       const due_date = args.due_date.split('-').reverse().join('-');
@@ -191,9 +224,7 @@ class UserDriver extends OAuth2Driver {
   }
 
   registerFetchProjectTasksAction() {
-    const actionFetchProjectTasks = this.homey.flow.getActionCard(
-      'action_fetch_project_tasks'
-    );
+    const actionFetchProjectTasks = this.homey.flow.getActionCard('action_fetch_project_tasks');
 
     actionFetchProjectTasks.registerRunListener(async (args, state) => {
       const tasks = await args.device.oAuth2Client.getTasks({
