@@ -35,5 +35,8 @@
   "1.3.0": {
     "en": "Added endpoints for HomeyScript",
     "nl": "Endpoints toegevoegd voor HomeyScript"
+  },
+  "1.4.0": {
+    "en": "Added a card to detect if a task exists and a card to complete tasks based on a filter."
   }
 }
