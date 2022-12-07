@@ -38,5 +38,8 @@
   },
   "1.4.0": {
     "en": "Added a card to detect if a task exists and a card to complete tasks based on a filter."
+  },
+  "1.4.1": {
+    "en": "Update deprecated Todoist API"
   }
 }
