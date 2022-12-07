@@ -39,11 +39,11 @@ console.log({
   task
 })
 
-// https://developer.todoist.com/rest/v1/?shell#create-a-new-task
+// https://developer.todoist.com/rest/v2/?shell#create-a-new-task
 const createdTask = await app.apiPost(`/users/${userId}/tasks`, { content: 'My task' });
 const createdTask2 = await app.apiPost(`/users/${userId}/tasks`, { content: 'My task2' });
 const createdTask3 = await app.apiPost(`/users/${userId}/tasks`, { content: 'My task3' });
-// https://developer.todoist.com/rest/v1/?shell#update-a-task
+// https://developer.todoist.com/rest/v2/?shell#update-a-task
 await app.apiPost(`/users/${userId}/tasks/${createdTask.id}`, { content: 'My updated task' });
 
 console.log({
