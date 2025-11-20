@@ -256,8 +256,8 @@
           "nl": "Maak een project taak..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]]",
-          "nl": "Maak een taak [[content]] in [[project]]"
+          "en": "Create a task [[content]] in [[project]] with priority [[priority]]",
+          "nl": "Maak een taak [[content]] in [[project]] met prioriteit [[priority]]"
         },
         "hint": {
           "en": "Creates a task in the selected project.",
@@ -288,6 +288,42 @@
               "en": "Project",
               "nl": "Project"
             }
+          },
+          {
+            "type": "dropdown",
+            "name": "priority",
+            "required": false,
+            "title": {
+              "en": "Priority",
+              "nl": "Prioriteit"
+            },
+            "value": "1",
+            "values": [
+              {
+                "id": "4",
+                "label": {
+                  "en": "P1"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "P2"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "P3"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "P4"
+                }
+              }
+            ]
           }
         ]
       },
@@ -298,8 +334,8 @@
           "nl": "Maak een project taak met uiterste datum tekst..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]] and due [[due_string]]",
-          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_string]]"
+          "en": "Create a task [[content]] in [[project]] and due [[due_string]] with priority [[priority]]",
+          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_string]] met prioriteit [[priority]]"
         },
         "hint": {
           "en": "Creates a task in the selected project with a due text (e.g. in 1 hour). The due text is based on the Todoist language/timezone setting. For all posibilities refer to the Todoist help articles.",
@@ -342,6 +378,42 @@
               "en": "Due",
               "nl": "Uiterste datum"
             }
+          },
+          {
+            "type": "dropdown",
+            "name": "priority",
+            "required": false,
+            "title": {
+              "en": "Priority",
+              "nl": "Prioriteit"
+            },
+            "value": "1",
+            "values": [
+              {
+                "id": "4",
+                "label": {
+                  "en": "P1"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "P2"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "P3"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "P4"
+                }
+              }
+            ]
           }
         ]
       },
@@ -352,8 +424,8 @@
           "nl": "Maak een project taak met uiterste datum..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]] and due date [[due_date]]",
-          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]]"
+          "en": "Create a task [[content]] in [[project]] and due date [[due_date]] with priority [[priority]]",
+          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] met prioriteit [[priority]]"
         },
         "hint": {
           "en": "Creates a task in the selected project with a due date.",
@@ -396,6 +468,42 @@
               "en": "Due date...",
               "nl": "Uiterste datum..."
             }
+          },
+          {
+            "type": "dropdown",
+            "name": "priority",
+            "required": false,
+            "title": {
+              "en": "Priority",
+              "nl": "Prioriteit"
+            },
+            "value": "1",
+            "values": [
+              {
+                "id": "4",
+                "label": {
+                  "en": "P1"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "P2"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "P3"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "P4"
+                }
+              }
+            ]
           }
         ]
       },
@@ -406,8 +514,8 @@
           "nl": "Maak een project taak met uiterste datum en uiterste tijd..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]] and due date [[due_date]] and due time [[due_time]]",
-          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] en uiterste tijd [[due_time]]"
+          "en": "Create a task [[content]] in [[project]] and due date [[due_date]] and due time [[due_time]] with priority [[priority]]",
+          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] en uiterste tijd [[due_time]] met prioriteit [[priority]]"
         },
         "hint": {
           "en": "Creates a task in the selected project with a due date and a due time.",
@@ -462,6 +570,42 @@
               "en": "Due time...",
               "nl": "Uiterste tijd..."
             }
+          },
+          {
+            "type": "dropdown",
+            "name": "priority",
+            "required": false,
+            "title": {
+              "en": "Priority",
+              "nl": "Prioriteit"
+            },
+            "value": "1",
+            "values": [
+              {
+                "id": "4",
+                "label": {
+                  "en": "P1"
+                }
+              },
+              {
+                "id": "3",
+                "label": {
+                  "en": "P2"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "P3"
+                }
+              },
+              {
+                "id": "1",
+                "label": {
+                  "en": "P4"
+                }
+              }
+            ]
           }
         ]
       },
