@@ -124,6 +124,7 @@ class UserDriver extends OAuth2Driver {
       await args.device.oAuth2Client.createTask({
         content: args.content,
         project_id: args.project.id,
+        priority: args.priority,
       });
 
       return true;
@@ -145,6 +146,7 @@ class UserDriver extends OAuth2Driver {
         content: args.content,
         project_id: args.project.id,
         due_string: args.due_string,
+        priority: args.priority,
       });
 
       return true;
@@ -166,6 +168,7 @@ class UserDriver extends OAuth2Driver {
         content: args.content,
         project_id: args.project.id,
         due_date: due_date,
+        priority: args.priority,
       });
 
       return true;
@@ -212,6 +215,7 @@ class UserDriver extends OAuth2Driver {
         content: args.content,
         project_id: args.project.id,
         due_datetime: actualDate.toISOString(),
+        priority: args.priority,
       });
 
       return true;
