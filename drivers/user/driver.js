@@ -147,6 +147,7 @@ class UserDriver extends OAuth2Driver {
         content: args.content,
         project_id: args.project.id,
         priority: args.priority,
+        assignee_id: args.assignee?.id,
       });
 
       return true;
@@ -155,6 +156,11 @@ class UserDriver extends OAuth2Driver {
     actionProjectTask.registerArgumentAutocompleteListener(
       'project',
       this.projectAutocompleteListener
+    );
+
+    actionProjectTask.registerArgumentAutocompleteListener(
+      'assignee',
+      this.collaboratorAutocompleteListener
     );
   }
 
@@ -169,6 +175,7 @@ class UserDriver extends OAuth2Driver {
         project_id: args.project.id,
         due_string: args.due_string,
         priority: args.priority,
+        assignee_id: args.assignee?.id,
       });
 
       return true;
@@ -177,6 +184,11 @@ class UserDriver extends OAuth2Driver {
     actionProjectDueStringTask.registerArgumentAutocompleteListener(
       'project',
       this.projectAutocompleteListener
+    );
+
+    actionProjectDueStringTask.registerArgumentAutocompleteListener(
+      'assignee',
+      this.collaboratorAutocompleteListener
     );
   }
 
@@ -191,6 +203,7 @@ class UserDriver extends OAuth2Driver {
         project_id: args.project.id,
         due_date: due_date,
         priority: args.priority,
+        assignee_id: args.assignee?.id,
       });
 
       return true;
@@ -199,6 +212,11 @@ class UserDriver extends OAuth2Driver {
     actionProjectDueDateTask.registerArgumentAutocompleteListener(
       'project',
       this.projectAutocompleteListener
+    );
+
+    actionProjectDueDateTask.registerArgumentAutocompleteListener(
+      'assignee',
+      this.collaboratorAutocompleteListener
     );
   }
 
@@ -238,6 +256,7 @@ class UserDriver extends OAuth2Driver {
         project_id: args.project.id,
         due_datetime: actualDate.toISOString(),
         priority: args.priority,
+        assignee_id: args.assignee?.id,
       });
 
       return true;
@@ -246,6 +265,11 @@ class UserDriver extends OAuth2Driver {
     actionProjectDueDateDueTimeTask.registerArgumentAutocompleteListener(
       'project',
       this.projectAutocompleteListener
+    );
+
+    actionProjectDueDateDueTimeTask.registerArgumentAutocompleteListener(
+      'assignee',
+      this.collaboratorAutocompleteListener
     );
   }
 
@@ -306,6 +330,27 @@ class UserDriver extends OAuth2Driver {
       return {
         id: project.id,
         name: project.name,
+      };
+    });
+
+    return mapped.filter((project) => {
+      return project.name.toLowerCase().includes(query.toLowerCase());
+    });
+  }
+
+  async collaboratorAutocompleteListener(query, args) {
+    if(!args.project || !args.project.id) {
+      return [];
+    }
+
+    const collaborators = await args.device.oAuth2Client.getCollaborators(
+      { project_id: args.project.id }
+    );
+
+    const mapped = collaborators.map((collaborator) => {
+      return {
+        id: collaborator.id,
+        name: collaborator.name,
       };
     });
 

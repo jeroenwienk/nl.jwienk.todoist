@@ -279,8 +279,8 @@
           "nl": "Maak een project taak..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]] with priority [[priority]]",
-          "nl": "Maak een taak [[content]] in [[project]] met prioriteit [[priority]]"
+          "en": "Create a task [[content]] in [[project]] with priority [[priority]] and assign to [[assignee]]",
+          "nl": "Maak een taak [[content]] in [[project]] met prioriteit [[priority]] en wijs toe aan [[assignee]]"
         },
         "hint": {
           "en": "Creates a task in the selected project.",
@@ -347,6 +347,19 @@
                 }
               }
             ]
+          },
+          {
+            "type": "autocomplete",
+            "name": "assignee",
+            "required": false,
+            "placeholder": {
+              "en": "Search for assignees...",
+              "nl": "Zoek naar toegewezen personen..."
+            },
+            "title": {
+              "en": "Assignee",
+              "nl": "Toegewezen persoon"
+            }
           }
         ]
       },
@@ -357,8 +370,8 @@
           "nl": "Maak een project taak met uiterste datum tekst..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]] and due [[due_string]] with priority [[priority]]",
-          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_string]] met prioriteit [[priority]]"
+          "en": "Create a task [[content]] in [[project]] and due [[due_string]] with priority [[priority]] and assign to [[assignee]]",
+          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_string]] met prioriteit [[priority]] en wijs toe aan [[assignee]]"
         },
         "hint": {
           "en": "Creates a task in the selected project with a due text (e.g. in 1 hour). The due text is based on the Todoist language/timezone setting. For all posibilities refer to the Todoist help articles.",
@@ -437,6 +450,19 @@
                 }
               }
             ]
+          },
+          {
+            "type": "autocomplete",
+            "name": "assignee",
+            "required": false,
+            "placeholder": {
+              "en": "Search for assignees...",
+              "nl": "Zoek naar toegewezen personen..."
+            },
+            "title": {
+              "en": "Assignee",
+              "nl": "Toegewezen persoon"
+            }
           }
         ]
       },
@@ -447,8 +473,8 @@
           "nl": "Maak een project taak met uiterste datum..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]] and due date [[due_date]] with priority [[priority]]",
-          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] met prioriteit [[priority]]"
+          "en": "Create a task [[content]] in [[project]] and due date [[due_date]] with priority [[priority]] and assign to [[assignee]]",
+          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] met prioriteit [[priority]] en wijs toe aan [[assignee]]"
         },
         "hint": {
           "en": "Creates a task in the selected project with a due date.",
@@ -527,6 +553,19 @@
                 }
               }
             ]
+          },
+          {
+            "type": "autocomplete",
+            "name": "assignee",
+            "required": false,
+            "placeholder": {
+              "en": "Search for assignees...",
+              "nl": "Zoek naar toegewezen personen..."
+            },
+            "title": {
+              "en": "Assignee",
+              "nl": "Toegewezen persoon"
+            }
           }
         ]
       },
@@ -537,8 +576,8 @@
           "nl": "Maak een project taak met uiterste datum en uiterste tijd..."
         },
         "titleFormatted": {
-          "en": "Create a task [[content]] in [[project]] and due date [[due_date]] and due time [[due_time]] with priority [[priority]]",
-          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] en uiterste tijd [[due_time]] met prioriteit [[priority]]"
+          "en": "Create a task [[content]] in [[project]] and due date [[due_date]] and due time [[due_time]] with priority [[priority]] and assign to [[assignee]]",
+          "nl": "Maak een taak [[content]] in [[project]] en uiterste datum [[due_date]] en uiterste tijd [[due_time]] met prioriteit [[priority]] en wijs toe aan [[assignee]]"
         },
         "hint": {
           "en": "Creates a task in the selected project with a due date and a due time.",
@@ -629,6 +668,19 @@
                 }
               }
             ]
+          },
+          {
+            "type": "autocomplete",
+            "name": "assignee",
+            "required": false,
+            "placeholder": {
+              "en": "Search for assignees...",
+              "nl": "Zoek naar toegewezen personen..."
+            },
+            "title": {
+              "en": "Assignee",
+              "nl": "Toegewezen persoon"
+            }
           }
         ]
       },
