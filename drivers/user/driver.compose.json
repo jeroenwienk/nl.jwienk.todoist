@@ -11,6 +11,8 @@
     "small": "/drivers/user/assets/images/small.png"
   },
   "icon": "/drivers/user/assets/icon.svg",
+  "platforms": ["local"],
+  "connectivity": ["cloud"],
   "pair": [
     {
       "id": "login_oauth2",

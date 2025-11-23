@@ -16,6 +16,7 @@
     "internet",
     "tools"
   ],
+  "platforms": ["local"],
   "tags": {
     "en": [
       "todo",
