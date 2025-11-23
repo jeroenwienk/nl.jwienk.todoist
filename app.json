@@ -42,6 +42,13 @@
     "name": "Jeroen Wienk",
     "email": "jeroenwienk@gmail.com"
   },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Erik van Leeuwen"
+      }
+    ]
+  },
   "bugs": {
     "url": "https://github.com/jeroenwienk/nl.jwienk.todoist/issues"
   },
