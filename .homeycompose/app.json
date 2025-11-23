@@ -1,6 +1,6 @@
 {
   "id": "nl.jwienk.todoist",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#db4035",
@@ -16,7 +16,9 @@
     "internet",
     "tools"
   ],
-  "platforms": ["local"],
+  "platforms": [
+    "local"
+  ],
   "tags": {
     "en": [
       "todo",

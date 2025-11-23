@@ -41,5 +41,9 @@
   },
   "1.4.1": {
     "en": "Update deprecated Todoist API"
+  },
+  "1.5.0": {
+    "en": "• Added option to add a priority to a task.\n• Added option to add a assignee to a task.\n• Added the option to search for tasks within a speficic project.\n\nCredits to Erik van Leeuwen for contributing these changes.",
+    "nl": "• Optie toegevoegd om een prioriteit aan een taak toe te voegen.\n• Optie toegevoegd om een toewijzing aan een taak toe te voegen.\n• Optie toegevoegd om naar taken binnen een specifiek project te zoeken.\n\nCredits aan Erik van Leeuwen voor zijn bijdrage aan deze wijzigingen."
   }
 }
