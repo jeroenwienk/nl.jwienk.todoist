@@ -36,8 +36,14 @@ class UserDriver extends OAuth2Driver {
         throw new Error(this.homey.__('invalidFilter'));
       }
 
+      let filter = `search: ${args.filter}`;
+      if(args.project?.id) {
+        const project = await args.device.oAuth2Client.getProject({ project_id: args.project.id });
+        filter += ` & #${project.name}`;
+      }
+
       const tasks = await args.device.oAuth2Client.getTasks({
-        filter: `search: ${args.filter}`,
+        filter,
       });
 
       this.log(tasks);
@@ -46,6 +52,11 @@ class UserDriver extends OAuth2Driver {
         await args.device.oAuth2Client.closeTask(task.id);
       }));
     });
+
+    actionCompleteTasks.registerArgumentAutocompleteListener(
+      'project',
+      this.projectAutocompleteListener
+    );
   }
 
   /**
@@ -105,8 +116,14 @@ class UserDriver extends OAuth2Driver {
     const conditionTaskExists = this.homey.flow.getConditionCard('condition_task_exists');
 
     conditionTaskExists.registerRunListener(async (args, state) => {
+      let filter = `search: ${args.filter}`;
+      if(args.project?.id) {
+        const project = await args.device.oAuth2Client.getProject({ project_id: args.project.id });
+        filter += ` & #${project.name}`;
+      }
+
       const tasks = await args.device.oAuth2Client.getTasks({
-        filter: `search: ${args.filter}`,
+        filter
       });
 
       if (tasks.length > 0) {
@@ -115,6 +132,11 @@ class UserDriver extends OAuth2Driver {
 
       return false;
     });
+
+    conditionTaskExists.registerArgumentAutocompleteListener(
+      'project',
+      this.projectAutocompleteListener
+    );
   }
 
   registerProjectTaskAction() {

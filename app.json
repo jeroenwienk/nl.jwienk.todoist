@@ -220,8 +220,8 @@
           "nl": "Taak met filter bestaat..."
         },
         "titleFormatted": {
-          "en": "Task with [[filter]] !{{exists|does not exist}} ",
-          "nl": "Taak with [[filter]] !{{bestaat|bestaat niet}}"
+          "en": "Task with [[filter]] !{{exists|does not exist}} in [[project]]",
+          "nl": "Taak with [[filter]] !{{bestaat|bestaat niet}} in [[project]]"
         },
         "hint": {
           "en": "Checks if any task with the filter exists. There might be multiple tasks that match.",
@@ -243,6 +243,19 @@
             "placeholder": {
               "en": "Do the laundry",
               "nl": "Doe de was"
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "project",
+            "required": false,
+            "placeholder": {
+              "en": "Search for projects...",
+              "nl": "Zoek naar projecten..."
+            },
+            "title": {
+              "en": "Project",
+              "nl": "Project"
             }
           }
         ]
@@ -650,8 +663,8 @@
           "nl": "Voltooi taken met filter..."
         },
         "titleFormatted": {
-          "en": "Complete tasks with [[filter]]",
-          "nl": "Voltooi taken met [[filter]]"
+          "en": "Complete tasks with [[filter]] in [[project]]",
+          "nl": "Voltooi taken met [[filter]] in [[project]]"
         },
         "hint": {
           "en": "A filter that is not very specific has the potential the complete alot of tasks. Make sure you have a very specific filter.",
@@ -673,6 +686,19 @@
             "placeholder": {
               "en": "Do the laundry",
               "nl": "Was doen"
+            }
+          },
+          {
+            "type": "autocomplete",
+            "name": "project",
+            "required": false,
+            "placeholder": {
+              "en": "Search for projects...",
+              "nl": "Zoek naar projecten..."
+            },
+            "title": {
+              "en": "Project",
+              "nl": "Project"
             }
           }
         ]
